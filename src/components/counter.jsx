@@ -1,21 +1,36 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
+    // constructor() {
+    //     super();
+
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
+
     state = {
         count: 0,
         tags: ['tag1', 'tag2', 'tag3']
     }
 
     render() {
-
         return (
             <React.Fragment>
                 <span className={this.toggleBadgeClasses()}>{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
                 {this.renderTags()}
             </React.Fragment>
 
         );
+    }
+
+    // handleIncrement() {
+    //     console.log("this", this);
+    // }
+
+
+    handleIncrement = () => {
+        console.log("this", this);
     }
 
     renderTags() {
